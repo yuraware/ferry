@@ -67,10 +67,7 @@ Object? denormalizeNode({
         /// and the key is missing from the data,
         /// we have partial data
         if (!policyCanRead && !denormalizedData.containsKey(fieldName)) {
-          if (config.allowPartialData) {
             return result;
-          }
-          throw PartialDataException(path: [resultKey]);
         }
 
         try {
